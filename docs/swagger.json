@@ -1,0 +1,173 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "datateam task - Backend REST Service",
+		"version": "1.0.0",
+		"title": "datateam task - Backend REST Service",
+		"termsOfService": "http://swagger.io/terms/",
+		"contact": {
+			"email": "bhupathy@askpundit.com"
+		},
+		"license": {
+			"name": "Apache 2.0"
+		}
+	},
+	"host": "localhost:2176",
+	"basePath": "/api",
+	"tags": [
+		{
+			"name": "Basic"
+		}
+	],
+	"schemes": [
+		"http"
+	],
+	"paths": {
+		"/type/task1":{
+			"post":{
+				"tags": [
+					"Basic"
+				],
+				"summary": "Basic odd even",
+				"description": "",
+				"operationId": "oddEven",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/oddevent"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal Server Error"
+					},
+					"200": {
+						"description": "Successful Operation"
+					}
+				}
+			}
+		},
+		"/type/task2":{
+			"post":{
+				"tags": [
+					"Basic"
+				],
+				"summary": "Basic string placement",
+				"description": "",
+				"operationId": "stringplacement",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/stringplacement"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal Server Error"
+					},
+					"200": {
+						"description": "Successful Operation"
+					}
+				}
+			}
+		},
+		"/type/task3":{
+			"post":{
+				"tags": [
+					"Basic"
+				],
+				"summary": "Basic missing",
+				"description": "",
+				"operationId": "missingnumbers",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/oddevent"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal Server Error"
+					},
+					"200": {
+						"description": "Successful Operation"
+					}
+				}
+			}
+		}
+	},
+	"securitySchemes ": {
+		"bearerAuth": {
+			"type": "http",
+			"scheme": "bearer",
+			"bearerFormat": "JWT"
+		}
+	},
+	"securityDefinitions": {
+		"bearerAuth": {
+			"type": "apiKey",
+			"name": "Authorization",
+			"in": "header"
+		}
+	},
+	"definitions": {
+		"oddevent":{
+			"type":"object",
+			"required":["input"],
+			"properties":{
+				"input":{
+					"type":"array",
+					"items":{
+						"type":"number"
+					}
+				}
+			}
+		},
+		"stringplacement":{
+			"type":"object",
+			"required":["input"],
+			"properties":{
+				"input":{
+					"type":"string"
+				}
+			}
+		}
+	},
+	"externalDocs": {
+		"description": "Find out more about Swagger",
+		"url": "http://swagger.io"
+	}
+}
